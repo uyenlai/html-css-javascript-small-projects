@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ccc;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  padding: 32px 48px;
+  background: green;
+  color: #fff;
+  font-size: 32px;
+  text-decoration: none;
+  border: none;
+  letter-spacing: 8px;
+  position: relative;
+}
+
+span {
+  display: inline-block;
+  padding: 16px 32px;
+}
+
+a::before,
+a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  background: #fff;
+  transition: all 0.5s linear;
+}
+
+a::before {
+    top: 0;
+    left: 0;
+}
+
+a::after {
+    bottom: 0;
+    right: 0;
+}
+
+span::before, span::after {
+  content: "";
+  width: 2px;
+  height: 0;
+  position: absolute;
+  background: #fff;
+  transition: all 0.5s linear;
+}
+
+span::before {
+    top: 0;
+    left: 0;
+}
+
+span::after {
+    bottom: 0;
+    right: 0;
+}
+
+a:hover::before, a:hover::after {
+    width: 100%;
+    transition-delay: 0.5s;
+}
+
+a:hover span::before, a:hover span::after {
+    height: 100%;
+    transition-delay: 0;
+}
